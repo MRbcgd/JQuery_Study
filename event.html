@@ -1,0 +1,26 @@
+<html>
+    <body>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+      <script type="text/javascript">
+        function click_handler(){
+          alert("Hello");
+        }
+        //ready() : unload된 element들에 이벤트를 적용할 수 있다.
+          $('document').ready(function(){
+            $('#click_').click(click_handler);
+            //unbind(),trigger() 같은 소모성 함수의 경우 익명함수 function(e)를 사용한다.
+            $('#unbind_').click(function(e){
+              //unbind() : 이벤트를 삭제한다.
+              $('#click_').unbind('click',click_handler);
+            });
+            $('#trigger_').click(function(e){
+              //trigger() : 이벤트를 강제 실행한다.
+              $('#click_').trigger('click');
+            });
+          })
+      </script>
+      <input type="button" name="" value="click" id="click_">
+      <input type="button" name="" value="unbind" id="unbind_">
+      <input type="button" name="" value="trigger" id="trigger_">
+    </body>
+</html>

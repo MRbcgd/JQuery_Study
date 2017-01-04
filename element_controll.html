@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <p id="paraent">Ohio</p>
+    <input type="button" name="" value="remove" id="remove_">
+    <input type="button" name="" value="replace" id="replace_">
+    <script type="text/javascript">
+      function remove_paraent(){
+        //제거
+        $('#paraent').remove();
+      }
+      function replace_paraent(){
+        //서술부를 주어로 치환
+        $('<b>HongKong</b>').replaceAll('b');
+      }
+      //append() : 자식으로 삽입
+      //after()  : 형제로 삽입
+      //wrap()   : 부모로 감싸기
+      $('#paraent').append('<br>').after('<b>Hello</b>').wrap('<strong>egg</strong>');
+      $('#remove_').click(remove_paraent);
+      $('#replace_').click(replace_paraent);
+
+    </script>
+  </body>
+</html>

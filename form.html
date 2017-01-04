@@ -8,24 +8,23 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
     </head>
     <body>
-        <p>
-            <input type="text"/>
-            <span></span>
-        </p>
+      <form class="" action="javascript:alert('success!');" method="post">
+        <p>
+           <input type="text"/>
+           <input type="submit" name="" value="submit">
+        </p>
+      </form>
+      <span></span>
         <script>
-      //foucs(), blur(), change(), select()
-           $('input').focus(function(){
-            $('span').html('focus');
-           })
-           .blur(function(){
-             $('span').html('blur');
-           })
-           .change(function(e){
-             alert("change"+$(e.target).val());
-           })
-           .select(function(){
-             $('span').html('select');
-           });
+          //submit()
+          $('form').submit(function(){
+            if($('input:first').val()=="Ohio"){
+              $("span").text("Validated...").show();
+              return true;
+            }
+            $("span").text("Not valid!").show().fadeOut(5000);
+                return false;
+          })
         </script>
     </body>
 </html>

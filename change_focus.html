@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      .selected{
+        background-color: red;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <ul id="navigation">
+      <li class="selected">Hello</li>
+      <li>Ohio</li>
+      <li>HongKong</li>
+    </ul>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    //click(),removeClass(),addClass()
+      $('#navigation li').click(function(){
+        $('#navigation li').removeClass('selected');
+        $(this).addClass('selected');
+      })
+    </script>
+  </body>
+</html>
